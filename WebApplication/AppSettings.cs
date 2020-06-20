@@ -1,5 +1,8 @@
 ﻿﻿namespace WebApplication
 {
+    /// <summary>
+    /// Postavljanje veličine stranice
+    /// </summary>
     public class AppSettings
     {
         public int PageSize { get; set; } = 10;

@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Popunjavanje podataka potrebnih za kreiranje zahtjeva za uslugu
+    /// </summary>
     public class ZahtjevViewModel
     {
         public int IdZahtjeva { get; set; }

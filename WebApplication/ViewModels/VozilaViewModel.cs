@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Postavljanje Vozilo viewa u info izbornik
+    /// </summary>
     public class VozilaViewModel
     {
         public IEnumerable<VoziloViewModel> Vozila { get; set; }

@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Postavljanje specifikacijskog viewa
+    /// </summary>
     public class SpecifikacijeViewModel
     {
         public IEnumerable<SpecifikacijaViewModel> Specifikacije { get; set; }

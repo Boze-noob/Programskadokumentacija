@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Izbornik kategorije vozila
+    /// </summary>
     public class KategorijeViewModel
     {
         public IEnumerable<Kategorije> Kategorije { get; set; }

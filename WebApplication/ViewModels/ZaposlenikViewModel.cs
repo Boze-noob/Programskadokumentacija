@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Popunjavanje osnovnih podataka o svakom vozaču
+    /// </summary>
     public class ZaposlenikViewModel
     {
         public int IdZaposlenika { get; set; }

@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Popis elemenata specifikacije
+    /// </summary>
     public class SpecifikacijaViewModel
     {
         public int IdSpecifikacija { get; set; }

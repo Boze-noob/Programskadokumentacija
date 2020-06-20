@@ -13,15 +13,26 @@ namespace WebApplication.TagHelpers
 {
     [HtmlTargetElement(Attributes = "page-info")]
     public class PagerTagHelper : TagHelper
+    ///javna klasa PagerTagHelper 
     {
         private readonly AppSettings _appSettings;
         private readonly IUrlHelperFactory _urlHelperFactory;
+        /// <summary>
+        /// Dodjeljivanje vrijednosti za _urlHelperFactory i _appSettings
+        /// </summary>
+        /// <param name="helperFactory"> pomoćna varijabla</param>
+        /// <param name="optionsSnapshot">opcijski snapshot</param>
 
         public PagerTagHelper(IUrlHelperFactory helperFactory, IOptionsSnapshot<AppSettings> optionsSnapshot)
+        
         {
+            
             this._urlHelperFactory = helperFactory;
             _appSettings = optionsSnapshot.Value;
         }
+        /// <summary>
+        /// ViewContext je sadržaj stranice, PageInfo označava izbornike,PageTitle-naslov stranice,PageAction-akcije koje je moguće izvršiti na stranici
+        /// </summary>
         
         [ViewContext]
         [HtmlAttributeNotBound]
@@ -29,7 +40,12 @@ namespace WebApplication.TagHelpers
         public PagingInfo PageInfo { get; set; }
         public string PageTitle { get; set; }
         public string PageAction { get; set; }
-
+        
+/// <summary>
+/// Prilagođavanje veličine
+/// </summary>
+/// <param name="context">Tag sadržaj</param>
+/// <param name="output">Vrijednost izlaza taga</param>
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "nav";
@@ -56,7 +72,11 @@ namespace WebApplication.TagHelpers
             }
 
             output.Content.AppendHtml(paginationList);
-        }
+        }/// <summary>
+         /// Popunjavanje atributa
+         /// </summary>
+         /// <param name="i"> neki cijeli broj</param>
+         /// <returns>li</returns>
 
         private TagBuilder BuildListItemForCurrentPage(int i)
         {
@@ -84,11 +104,21 @@ namespace WebApplication.TagHelpers
             li.InnerHtml.AppendHtml(input);
             return li;
         }
-
+/// <summary>
+/// Privatna funkcija za kreiranje tagova
+/// </summary>
+/// <param name="i">cijeli broj</param>
+/// <returns>poziva funkciju BuildListItemForPage</returns>
         private TagBuilder BuildListItemForPage(int i)
         {
             return BuildListItemForPage(i, i.ToString());
         }
+/// <summary>
+/// Kreira listu predmeta za neku stranicu koja je određena brojem u varijabli i
+/// </summary>
+/// <param name="i">označava stranicu</param>
+/// <param name="text">string koji dodajemo na kraj naziva taga</param>
+/// <returns>li</returns>
         private TagBuilder BuildListItemForPage(int i, string text)
         {
             IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);

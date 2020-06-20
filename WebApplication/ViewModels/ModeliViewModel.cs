@@ -4,6 +4,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Prikaz vrste modela
+    /// </summary>
     public class ModeliViewModel
     {
         public IEnumerable<ModelViewModel> Modeli { get; set; }

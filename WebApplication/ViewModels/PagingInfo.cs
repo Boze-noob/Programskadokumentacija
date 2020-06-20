@@ -2,6 +2,9 @@
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Određivanje ukupnog broja predmeta na stranici
+    /// </summary>
     public class PagingInfo
     {
         public int TotalItems { get; set; }

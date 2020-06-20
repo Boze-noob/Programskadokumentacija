@@ -5,6 +5,9 @@ using WebApplication.Models;
 
 namespace WebApplication.ViewModels
 {
+    /// <summary>
+    /// Postavljanje osnovnih podataka o vozilu , njegova dostupnost, slike
+    /// </summary>
     public class VozilosViewModel
     {
         public int IdVozila { get; set; }

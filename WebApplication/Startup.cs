@@ -14,8 +14,15 @@ using WebApplication.Models;
 
 namespace WebApplication
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// funkcija za postavljanje konfiguracija
+        /// </summary>
+        /// <param name="configuration">konfiguracije</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,7 +30,11 @@ namespace WebApplication
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
+        /// <summary>
+        /// Ova metoda se zove Runtime. Koristite ovu metodu da dodate usluge u kontejner.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<AppUser, AppRole>(options => { options.User.RequireUniqueEmail = true; })
@@ -49,7 +60,12 @@ namespace WebApplication
             services.Configure<AppSettings>(appSection);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
+        /// <summary>
+        /// Ova metoda se zove Runtime. Koristite ovu metodu da konfigurišete HTTP zahtijeva.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
